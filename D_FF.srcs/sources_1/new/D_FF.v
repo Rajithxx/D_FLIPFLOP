@@ -1,14 +1,13 @@
-module d_flip_flop (Q,D,clk,reset);
+module dff(D,clk,rst,Q);
 input D;
 input clk;
-input reset;
+input rst;
 output reg Q;
-
-always @(posedge clk or posedge reset)
-  begin
-    if (reset == 1'b1 )
-                           // Write the logic for D Flip-flop
-    else
-        
-  end
-endmodule        
+always @(posedge clk) 
+begin
+if(rst==1'b1)
+Q <= 1'b0; 
+else 
+Q <= D; 
+end 
+endmodule 
